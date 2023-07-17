@@ -184,10 +184,10 @@ if __name__ == '__main__':
                         help='use cudnn-benchmark? (default false)') 
     
 
-    dir_yaml = os.path.splitext('model_config_RawGAT_ST')[0] + '.yaml'
+    dir_yaml = '/kaggle/working/RawGAT-ST-antispoofing/model_config_RawGAT_ST.yaml'
 
     with open(dir_yaml, 'r') as f_yaml:
-            parser1 = yaml.load(f_yaml)
+            parser1 = yaml.safe_load(f_yaml)
     
     if not os.path.exists('models'):
         os.mkdir('models')
